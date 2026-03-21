@@ -9,10 +9,13 @@ A skill to fetch, aggregate, and display global market status with precise times
 
 ## Operational Workflow
 
-### 1. Data Collection (Preferred)
-Use the bundled Python script for fast and reliable data collection with timestamps and sources:
+### 1. Data Collection (Robust & High-Signal)
+Use the bundled Python script for fast and reliable data collection. The script is designed for maximum robustness:
+- **Scraping Strategy**: Uses `curl_cffi` with Chrome impersonation to bypass TradingEconomics anti-scraping measures.
+- **Fallback Mechanism**: Automatically falls back to the `Yahoo Finance` (yfinance) for critical market indicators (S&P 500, Nasdaq, Gold, Oil, etc.) if TradingEconomics fails.
+- **News & Predictions**: Fetches live news from Wallstreetcn and prediction data from Polymarket with enhanced timeouts.
 - **Command**: `python3 ./skills/simple_quick-market-dashbord/scripts/fetch_market_data.py`
-- **Output**: A JSON object containing `report_generated_at`, `stocks`, `commodities`, `currencies`, `bonds`,  `wscn` (news), and `poly` (predictions). Each item includes a `source` field.
+- **Output**: A JSON object containing `report_generated_at`, `stocks`, `commodities`, `currencies`, `bonds`, `wscn` (news), and `poly` (predictions). Each item includes a `source` field identifying if it came from TradingEconomics or YahooFinance (Fallback).
 
 ### 2. Attribution & Precision
 - **Source Labeling**: You MUST clearly label the source for each section or data point (e.g., "Source: TradingEconomics").
@@ -59,7 +62,7 @@ The output must be a high-signal Markdown dashboard. ALWAYS use this exact struc
 - ... (展示最近 10 条快讯)
 
 ## 3. 🔮 预测市场 (Polymarket)
-- 🗳️ **[事件名称]**: **Yes% = [Price]%** (24h 交易量: $[Vol], 更新: *HH:MM:SS*, 来源: Polymarket)
+- 🗳️ **[事件名称]**: **[Outcomes]** (24h 交易量: $[Vol], 来源: Polymarket)
 - ... (展示 5 个热门市场)
 
 ---
