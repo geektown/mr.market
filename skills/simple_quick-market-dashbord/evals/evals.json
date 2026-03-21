@@ -1,0 +1,23 @@
+{
+  "skill_name": "simple_quick-market-dashbord",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "显示全球市场看板",
+      "expected_output": "应该显示包含宏观市场、股票、商品、债券、外汇、华尔街见闻新闻以及 Polymarket 预测市场的 Markdown 看板。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "当前 A 股和美股主要指数的情况，以及华尔街见闻的头条是什么？",
+      "expected_output": "应该明确列出 SHANGHAI, CSI300, US500, US100 的最新价和涨跌幅，并列出华尔街见闻的热门新闻。",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Polymarket 上最热门的 5 个预测事件是什么？",
+      "expected_output": "应该列出 Polymarket 的热门市场，包括事件名称和 Yes% 概率（价格）。",
+      "files": []
+    }
+  ]
+}
