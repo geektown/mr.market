@@ -19,6 +19,10 @@ Use the bundled Python script for fast and reliable data collection with timesta
 - **Time & Date**: Every section starts with its specific update time in **UTC+8 (Beijing Time)**.
 - **Backwards Compatibility**: If manual `web_fetch` is used, ensure the source name is correctly identified from the URL domain.
 
+### 3. Save file
+1. First, when the markdown file is generated, Move the old file to `~/web-data/mr.market/web/market-dashboard_${this_file_created_datetime}.md` to backup.
+2. Second, save new generated file to `~/web-data/mr.market/web/market-dashboard.md`
+
 ## Output Structure
 
 The output must be a high-signal Markdown dashboard. ALWAYS use this exact structure:
