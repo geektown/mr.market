@@ -17,13 +17,13 @@
 ### 1. 数据采集 (Skill 驱动)
 直接运行 Python 采集脚本：
 ```bash
-python3 ./skills/simple_quick-market-dashbord/scripts/fetch_market_data.py
+python3 ./skills/market-dashbord/scripts/fetch_market_data.py
 ```
 
 ### 2. 自动化调度 (OpenClaw / Cron)
 配置定时任务将 Skill 输出重定向至 Web 目录：
 ```bash
-*/15 * * * * claude -s simple_quick-market-dashbord > ./web/market-dashboard.md
+*/15 * * * * claude -s market-dashbord > ./web/market-dashboard.md
 ```
 
 ### 3. Web 访问

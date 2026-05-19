@@ -1,9 +1,9 @@
 ---
-name: simple_quick-market-dashbord
+name: market-dashbord
 description: Use this skill whenever the user asks for a global market dashboard, market overview, today's market status, or specific data from TradingEconomics, Wallstreetcn (华尔街见闻), or Polymarket. It provides a real-time, lightweight market summary formatted in Markdown, covering stocks, commodities, bonds, forex, news, and prediction markets. **CRITICAL: All data points and news items MUST include a date, time, explicit timezone, and the DATA SOURCE name.**
 ---
 
-# simple_quick-market-dashbord
+# market-dashbord
 
 A skill to fetch, aggregate, and display global market status with precise timestamps and source attribution.
 
@@ -14,7 +14,7 @@ Use the bundled Python script for fast and reliable data collection. The script 
 - **Scraping Strategy**: Uses `curl_cffi` with Chrome impersonation to bypass TradingEconomics anti-scraping measures.
 - **Fallback Mechanism**: Automatically falls back to the `Yahoo Finance` (yfinance) for critical market indicators (S&P 500, Nasdaq, Gold, Oil, etc.) if TradingEconomics fails.
 - **News & Predictions**: Fetches live news from Wallstreetcn and prediction data from Polymarket with enhanced timeouts.
-- **Command**: `python3 ./skills/simple_quick-market-dashbord/scripts/fetch_market_data.py`
+- **Command**: `python3 ./skills/market-dashbord/scripts/fetch_market_data.py`
 - **Output**: A JSON object containing `report_generated_at`, `stocks`, `commodities`, `currencies`, `bonds`, `wscn` (news), and `poly` (predictions). Each item includes a `source` field identifying if it came from TradingEconomics or YahooFinance (Fallback).
 
 ### 2. Attribution & Precision

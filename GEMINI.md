@@ -14,10 +14,10 @@ The project leverages **Gemini Skills** and **Python-based Agents** to fetch dat
 ## 🛠️ Key Operations
 
 ### 1. Generating Market Dashboard
-To generate the global market dashboard, use the `simple_quick-market-dashbord` skill.
+To generate the global market dashboard, use the `market-dashbord` skill.
 - **Primary Method**: Run the scraper script:
   ```bash
-  python3 ./skills/simple_quick-market-dashbord/scripts/fetch_market_data.py
+  python3 ./skills/market-dashbord/scripts/fetch_market_data.py
   ```
 - **Skill Usage**: Trigger by asking for "global market overview", "today's market status", or "market dashboard".
 
@@ -31,20 +31,20 @@ The project is hosted as an **Agent-First** web service.
 To keep the dashboard updated for other agents, schedule the following command to update the web file:
 ```bash
 # Example Cron task (every 15 minutes)
-*/15 * * * * claude -s simple_quick-market-dashbord > /root/web-data/mr.market/web/market-dashboard.md
+*/15 * * * * claude -s market-dashbord > /root/web-data/mr.market/web/market-dashboard.md
 ```
 
 ### 3. Indicators Reference
 For a mapping of common financial instruments to their source codes (e.g., US500, SHANGHAI), refer to:
-`./skills/simple_quick-market-dashbord/references/indicators.md`
+`./skills/market-dashbord/references/indicators.md`
 
 ## 📏 Development & Interaction Rules
 - **Precision**: All financial data **MUST** include a full date, time, and explicit timezone (UTC+8).
 - **Attribution**: Every data point **MUST** be attributed to its source (e.g., TradingEconomics).
-- **Formatting**: Dashboards follow a strict Markdown structure defined in `skills/simple_quick-market-dashbord/SKILL.md`.
+- **Formatting**: Dashboards follow a strict Markdown structure defined in `skills/market-dashbord/SKILL.md`.
 - **Security**: Never expose API keys. Use provided scripts for data fetching to ensure robustness against upstream site changes.
 
 ## 📂 Directory Structure
 - `skills/`: Gemini skill definitions, scripts, and evaluation data.
-- `skills/simple_quick-market-dashbord/`: The core skill for market data.
+- `skills/market-dashbord/`: The core skill for market data.
 - `skills/*-workspace/`: Temporary evaluation results (ignored by git).

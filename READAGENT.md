@@ -5,7 +5,7 @@
 ### 1. Skill 安装
 # 克隆代码库到 skills 目录
 ```
-git clone git@github.com:geektown/simple_quick-market-dashbord.git /root/.openclaw/workspace/skills/simple_quick-market-dashbord
+git clone git@github.com:geektown/mr.market.git /root/.openclaw/workspace/skills/market-dashbord
 ```
 
 # 安装 Python 依赖
@@ -73,7 +73,7 @@ chmod 755 /root /root/web-data /root/web-data/mr.market /root/web-data/mr.market
 `nginx -t && systemctl reload nginx`
 
 ### 4. 生成报告
-`python3 /root/.openclaw/workspace/skills/simple_quick-market-dashbord/scripts/fetch_market_data.py`
+`python3 /root/.openclaw/workspace/skills/market-dashbord/scripts/fetch_market_data.py`
 
 将生成的 Markdown 内容写入 `/root/web-data/mr.market/web/market-dashboard.md`
 
